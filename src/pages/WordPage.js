@@ -19,6 +19,7 @@ export default function WordPage() {
     const wordList = useSelector(state => state.word.wordList);
     const wordListLength = wordList.filter(e => e.state === 'complete').length;
     const wordListState = useSelector(state => state.word.wordListState);
+    const visible = useSelector(state => state.word.visible);
 
     const [convertModal, setConvertModal] = useState(false);
     const [sortModal, setSortModal] = useState(false);
@@ -42,6 +43,10 @@ export default function WordPage() {
 
     const clickSortShuffle = () => {
         dispatch(wordActions.sortWordList(5))
+    }
+
+    const clickVisible = () => {
+        dispatch(wordActions.convertVisible());
     }
 
     useEffect(() => {
@@ -101,9 +106,27 @@ export default function WordPage() {
                     </Flex>
                 )}
             </Flex>
-            {/* <Flex>
-                전체 보이기
-            </Flex> */}
+            <Flex styles={{
+                position: 'fixed',
+                width: '130px',
+                height: '50px',
+                backgroundColor: '#6F87FF',
+                borderRadius: '10px',
+                justifyContent: 'center',
+                alignItems: 'center',
+                right: '32px',
+                bottom: '64px',
+                boxShadow: '0 3px 6px rgba(0, 0, 0, 0.1)'
+            }}
+                _onClick={clickVisible}>
+                <Text styles={{
+                    color: '#fff',
+                    fontSize: '14px',
+                    fontWeight: 'bold'
+                }}>
+                    {visible ? "전체 숨기기" : "전체 보이기"}
+                </Text>
+            </Flex>
             {convertModal &&
                 <Modal close={() => setConvertModal(false)}>
                     <ConvertModal>

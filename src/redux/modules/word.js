@@ -14,6 +14,7 @@ const initialState = {
     wordListState: 'learning',
     wordConvert: true,
     sortType: 1,
+    visible: false,
 };
 
 const wordSlice = createSlice({
@@ -78,6 +79,14 @@ const wordSlice = createSlice({
             } else {
                 state.wordList[index].x_count += 1;
             }
+        },
+        convertVisible(state) {
+            const value = !state.visible;
+            state.visible = value;
+            state.wordList = state.wordList.map(v => {
+                v.visible = value;
+                return v;
+            });
         }
     },
     extraReducers: builder => {
