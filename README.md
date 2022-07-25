@@ -10,6 +10,20 @@ npm install
 npm start
 ```
 
+![image](https://user-images.githubusercontent.com/48580444/180768178-2a9b9529-537c-4668-afca-2a3afdd4cc68.png)
+<br/>메인 화면입니다.
+<br/>
+<br/>
+![image](https://user-images.githubusercontent.com/48580444/180768309-8d93f514-69c5-41e2-8d27-88a0a02e503d.png)
+<br/>단어 선택, 스크롤 이벤트를 할 수 있습니다.
+<br/>
+<br/>
+![image](https://user-images.githubusercontent.com/48580444/180768492-7583ec93-cec2-43ed-8725-d2830a0b9a7e.png)
+<br/>모달을 이용해 정렬 기준을 선택할 수 있습니다.
+<br/>
+<br/>
+<br/>등등 번역, 단어의 위치 변경, 암기 완료, 학습 분류, 전체 보이기, 상태 유지 기능을 구현했습니다.
+
 
 ## :books: 사용한 기술과 선택한 이유
 **redux-toolkit**<br/>
